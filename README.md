@@ -62,6 +62,15 @@ node tools/pack.js                            # builds dist/gitscan-<version>.zi
 `test/harness.html?repo=owner/name` renders the content script with a stubbed `chrome` API when served over http.
 `tools/screenshots.js` and `tools/crops.js` need `puppeteer-core` and a Chromium build.
 
+## Token
+
+- Ticker: $GITSCAN
+- Chain: Solana
+- Contract address: `6fCn2zY8vYbnRqHe57r3JmER2PXeAmX41Cpb5QQRpump`
+
+gitscan reads this address from this README, so you can check it yourself: open this repo with the extension
+installed. Not financial advice. Do your own research.
+
 ## Links
 
 - X: [@gitcascan](https://x.com/gitcascan)
