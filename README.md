@@ -62,6 +62,10 @@ node tools/pack.js                            # builds dist/gitscan-<version>.zi
 `test/harness.html?repo=owner/name` renders the content script with a stubbed `chrome` API when served over http.
 `tools/screenshots.js` and `tools/crops.js` need `puppeteer-core` and a Chromium build.
 
+## Links
+
+- X: [@gitcascan](https://x.com/gitcascan)
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
