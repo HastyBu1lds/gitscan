@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Content script harness</title>
+<body style="font:14px system-ui;background:#fff;padding:24px">
+<p>Harness for src/content.js with a stubbed chrome API. Use <code>?repo=owner/name</code>.</p>
+<script>
+  const repo = new URLSearchParams(location.search).get('repo') || 'vybenetwork/solana-swap-api';
+  const m = document.createElement('meta');
+  m.name = 'octolytics-dimension-repository_nwo'; m.content = repo; document.head.append(m);
+  const store = {};
+  window.chrome = {
+    storage: { local: { get: async (d) => ({ ...d, ...store }), set: async (o) => Object.assign(store, o) }, onChanged: { addListener() {} } },
+    runtime: { sendMessage: async (msg) => {
+      try { return { ok: true, result: await CAX.scanRepo(msg.nwo, { fetch: (...a) => fetch(...a), githubToken: new URLSearchParams(location.search).get('t') || '' }) }; }
+      catch (e) { return { ok: false, code: e.code, message: e.message }; }
+    } },
+  };
+</script>
+<script src="../src/extract.js"></script>
+<script src="../src/core.js"></script>
+<script src="../src/content.js"></script>

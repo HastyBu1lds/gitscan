@@ -1,0 +1,15 @@
+dist/
+node_modules/
+*.log
+.env
+
+# internal notes and design experiments, kept on disk but not published
+STORE_LISTING.md
+logo/*
+!logo/final-master.svg
+!logo/final-small.svg
+tools/logo-options.js
+tools/logo-options-2.js
+tools/logo-lynx.js
+tools/logo-lines.js
+tools/make-icons.js

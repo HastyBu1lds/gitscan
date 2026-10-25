@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gitscan options</title>
+<style>
+  html, body { background: #0f1412; }
+  body { margin: 0 auto; padding: 32px 20px; max-width: 480px; color: #e6efe9; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 16px; margin: 0 0 16px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; }
+  .hint { color: #8fa197; font-size: 12.5px; margin: 4px 0 16px; }
+  /* type=text masked with CSS, so Chrome's password manager doesn't pop up over the page */
+  #token { width: 100%; box-sizing: border-box; padding: 7px 9px; border: 1px solid #26332d; border-radius: 6px; background: #17211d; color: inherit; font: 13px ui-monospace, Consolas, monospace; -webkit-text-security: disc; }
+  .check { display: flex; gap: 8px; align-items: center; margin: 0 0 16px; font-weight: 600; }
+  button { background: #3ddc84; color: #04150c; border: 0; border-radius: 6px; padding: 7px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+  button.quiet { background: transparent; color: #8fa197; border: 1px solid #26332d; }
+  #status { margin-left: 10px; color: #8fa197; }
+</style>
+</head>
+<body>
+  <h1>gitscan</h1>
+
+  <label for="token">GitHub token (optional)</label>
+  <input id="token" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-lpignore="true" data-1p-ignore placeholder="github_pat_…">
+  <p class="hint">Without a token GitHub allows about 60 requests per hour, roughly 30 repos. A token with no scopes (public read only) raises that to 5,000. It is stored on this device and only sent to api.github.com.</p>
+
+  <label class="check"><input id="hide" type="checkbox"> Hide the badge when no CA is found</label>
+
+  <button id="save" type="button">Save</button> <button id="clear" type="button" class="quiet">Remove token</button><span id="status"></span>
+  <script src="options.js"></script>
+</body>
+</html>
